@@ -1,0 +1,109 @@
+         <!DOCTYPE html>
+<html>
+<head>
+<title>Fullon webpage</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+.joh {margin-left: 250px}
+.franc{margin-right: 100px}
+.ZOE{margin-left: 350px}
+.Ire{margin-left: 250px}
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+h2 {margin-left: 300px}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center w3-yellow">
+  <!-- Avatar image in top left corner -->
+
+<a href="https://ppkfullon.w3spaces.com/webpage.html" class="w3-bar-item w3-button w3-padding-large w3-yellow">
+
+    <p><text style ="color:Black;">Back to Menu</text></p>
+
+  </a>
+</nav>
+
+
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">
+      <text style ="color:Yellow;">Factorial, Sum, and Average Calculator</text></h1>
+    <p class="franc">Enter a number</p>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey" >Enter a number:</h2>
+    <hr style="width:350px" class="w3-opacity Ire">
+
+    <input type="number" id="input" class ="ZOE"><br><br>
+
+    <button onclick="calculateResults()" class ="ZOE">Calculate Number</button>
+    <br><br><br>
+        
+   
+       <span id = "result" class="joh" text style="color:Yellow;"></span>
+
+         
+         <br>
+         <br>
+
+
+
+    
+
+           <script>
+        function calculateResults() {
+            const inputNumber = parseInt(document.getElementById('input').value);
+
+            if (isNaN(inputNumber)) {
+                window.alert('Please enter a valid number.');
+                return;
+            }
+
+            // Calculate nth factorial using a while loop
+            let factorial = 1;
+            let i = 1;
+            while (i <= inputNumber) {
+                factorial *= i;
+                i++;
+            }
+
+            // Calculate the sum of the first n numbers using a do-while loop
+            let sum = 0;
+            let j = 1;
+            do {
+                sum += j;
+                j++;
+            } while (j <= inputNumber);
+
+            // Calculate the average of the first n numbers using a for loop
+            let total = 0;
+            for (let k = 1; k <= inputNumber; k++) {
+                total += k;
+            }
+            const average = total / inputNumber;
+
+            // Display the results
+            const resultDisplay = document.getElementById('result');
+            resultDisplay.textContent = `Factorial: ${factorial}, Sum: ${sum}, Average: ${average.toFixed(2)}`;
+        }
+    </script>
